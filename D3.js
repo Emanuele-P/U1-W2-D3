@@ -238,6 +238,19 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
 
+const extraCharaName = charactersNames.filter(
+  (name) => !femaleCharacters.includes(name)
+)
+console.log('before', charactersNames.length)
+console.log('after', extraCharaName.length)
+
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+
+let rando
+let attempts = 0
+
+const randomChara = Math.random()
+if (randomChara < 0.1) {
+}
