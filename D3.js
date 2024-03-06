@@ -105,7 +105,7 @@ const starWarsCharacters = [
   Crea una variabile chiamata "charactersNames" e assegnale un array vuoto
 */
 
-let charactersNames = []
+const charactersNames = []
 
 /* ESERCIZIO 2
   Utilizzando un ciclo for, cicla l'array "starWarsCharacters".
@@ -122,11 +122,11 @@ console.log(charactersNames)
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
 
-let femaleCharacters = []
+const femaleCharacters = []
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === 'female') {
-    femaleCharacters.push(starWarsCharacters[i].name)
+    femaleCharacters.push(starWarsCharacters[i])
   }
 }
 console.log(femaleCharacters)
@@ -165,6 +165,7 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
       break
     case 'blue-gray':
       eyeColor['blue-gray'].push(starWarsCharacters[i].name)
+      break
     default:
       console.log('Not recognized :(')
   }
@@ -248,9 +249,52 @@ console.log('after', extraCharaName.length)
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
 
-let rando
-let attempts = 0
+const randomChara = Math.floor(Math.random() * starWarsCharacters.length)
+const selectedCharacter = starWarsCharacters[randomChara]
 
-const randomChara = Math.random()
-if (randomChara < 0.1) {
+console.log('The found character name is:', selectedCharacter.name)
+if (selectedCharacter.gender === 'female') {
+  console.log('She is', selectedCharacter.height, 'cm tall')
+} else if (selectedCharacter.gender === 'male') {
+  console.log('He is', selectedCharacter.height, 'cm tall')
+} else {
+  console.log('They are', selectedCharacter.height, 'cm tall')
+}
+
+if (selectedCharacter.gender === 'female') {
+  console.log(
+    'She has',
+    selectedCharacter.hair_color,
+    'hair,',
+    selectedCharacter.eye_color,
+    'eyes and',
+    selectedCharacter.skin_color,
+    'skin.'
+  )
+} else if (selectedCharacter.name === 'Darth Vader') {
+  console.log(
+    'He is bald, has',
+    selectedCharacter.eye_color,
+    'eyes and',
+    selectedCharacter.skin_color,
+    'skin.'
+  )
+} else if (selectedCharacter.gender === 'male') {
+  console.log(
+    'He has',
+    selectedCharacter.hair_color,
+    'hair,',
+    selectedCharacter.eye_color,
+    'eyes and',
+    selectedCharacter.skin_color,
+    'skin.'
+  )
+} else {
+  console.log(
+    'They have',
+    selectedCharacter.eye_color,
+    'eyes and a',
+    selectedCharacter.skin_color,
+    'coating.'
+  )
 }
